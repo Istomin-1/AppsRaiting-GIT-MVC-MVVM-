@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		74D3E844261087630032AC39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E843261087630032AC39 /* AppDelegate.swift */; };
 		74D3E846261087630032AC39 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E845261087630032AC39 /* SceneDelegate.swift */; };
-		74D3E848261087630032AC39 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E847261087630032AC39 /* ViewController.swift */; };
 		74D3E84B261087630032AC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D3E849261087630032AC39 /* Main.storyboard */; };
 		74D3E84D261087650032AC39 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74D3E84C261087650032AC39 /* Assets.xcassets */; };
 		74D3E850261087650032AC39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D3E84E261087650032AC39 /* LaunchScreen.storyboard */; };
+		74D3E860261088C30032AC39 /* AppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E85F261088C30032AC39 /* AppTableViewController.swift */; };
+		74D3E863261089060032AC39 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E862261089060032AC39 /* AppDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		74D3E840261087630032AC39 /* AppsRating(GIT, MVC, MVVM).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AppsRating(GIT, MVC, MVVM).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D3E843261087630032AC39 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74D3E845261087630032AC39 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		74D3E847261087630032AC39 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74D3E84A261087630032AC39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74D3E84C261087650032AC39 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74D3E84F261087650032AC39 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74D3E851261087650032AC39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74D3E85F261088C30032AC39 /* AppTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewController.swift; sourceTree = "<group>"; };
+		74D3E862261089060032AC39 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				74D3E843261087630032AC39 /* AppDelegate.swift */,
 				74D3E845261087630032AC39 /* SceneDelegate.swift */,
-				74D3E847261087630032AC39 /* ViewController.swift */,
+				74D3E85F261088C30032AC39 /* AppTableViewController.swift */,
+				74D3E862261089060032AC39 /* AppDetailViewController.swift */,
 				74D3E849261087630032AC39 /* Main.storyboard */,
 				74D3E84C261087650032AC39 /* Assets.xcassets */,
 				74D3E84E261087650032AC39 /* LaunchScreen.storyboard */,
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74D3E848261087630032AC39 /* ViewController.swift in Sources */,
+				74D3E860261088C30032AC39 /* AppTableViewController.swift in Sources */,
 				74D3E844261087630032AC39 /* AppDelegate.swift in Sources */,
 				74D3E846261087630032AC39 /* SceneDelegate.swift in Sources */,
+				74D3E863261089060032AC39 /* AppDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FX9R88448;
 				INFOPLIST_FILE = "AppsRating(GIT, MVC, MVVM)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +301,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.istomin.mikhail.91.AppsRating-GIT--MVC--MVVM-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +313,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FX9R88448;
 				INFOPLIST_FILE = "AppsRating(GIT, MVC, MVVM)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +321,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.istomin.mikhail.91.AppsRating-GIT--MVC--MVVM-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
