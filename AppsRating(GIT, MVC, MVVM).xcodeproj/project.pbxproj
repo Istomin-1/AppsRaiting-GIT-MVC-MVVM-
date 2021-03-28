@@ -14,6 +14,9 @@
 		74D3E850261087650032AC39 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74D3E84E261087650032AC39 /* LaunchScreen.storyboard */; };
 		74D3E860261088C30032AC39 /* AppTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E85F261088C30032AC39 /* AppTableViewController.swift */; };
 		74D3E863261089060032AC39 /* AppDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E862261089060032AC39 /* AppDetailViewController.swift */; };
+		74D3E86E2610A7390032AC39 /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E86D2610A7390032AC39 /* AppTableViewCell.swift */; };
+		74D3E8722610A7A90032AC39 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E8712610A7A90032AC39 /* AppModel.swift */; };
+		74D3E8752610B12C0032AC39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E8742610B12C0032AC39 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		74D3E851261087650032AC39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		74D3E85F261088C30032AC39 /* AppTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewController.swift; sourceTree = "<group>"; };
 		74D3E862261089060032AC39 /* AppDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDetailViewController.swift; sourceTree = "<group>"; };
+		74D3E86D2610A7390032AC39 /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
+		74D3E8712610A7A90032AC39 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		74D3E8742610B12C0032AC39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +64,75 @@
 		74D3E842261087630032AC39 /* AppsRating(GIT, MVC, MVVM) */ = {
 			isa = PBXGroup;
 			children = (
-				74D3E843261087630032AC39 /* AppDelegate.swift */,
-				74D3E845261087630032AC39 /* SceneDelegate.swift */,
-				74D3E85F261088C30032AC39 /* AppTableViewController.swift */,
-				74D3E862261089060032AC39 /* AppDetailViewController.swift */,
-				74D3E849261087630032AC39 /* Main.storyboard */,
-				74D3E84C261087650032AC39 /* Assets.xcassets */,
-				74D3E84E261087650032AC39 /* LaunchScreen.storyboard */,
-				74D3E851261087650032AC39 /* Info.plist */,
+				74D3E8662610A5C40032AC39 /* ViewControllers */,
+				74D3E8672610A5F20032AC39 /* Models */,
+				74D3E8682610A6090032AC39 /* Views */,
+				74D3E86A2610A6400032AC39 /* Storyboard */,
+				74D3E8692610A6270032AC39 /* Services */,
+				74D3E86B2610A6520032AC39 /* Supporting Files */,
+				74D3E86C2610A6740032AC39 /* Resources */,
 			);
 			path = "AppsRating(GIT, MVC, MVVM)";
+			sourceTree = "<group>";
+		};
+		74D3E8662610A5C40032AC39 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E85F261088C30032AC39 /* AppTableViewController.swift */,
+				74D3E862261089060032AC39 /* AppDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74D3E8672610A5F20032AC39 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E8712610A7A90032AC39 /* AppModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		74D3E8682610A6090032AC39 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E86D2610A7390032AC39 /* AppTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74D3E8692610A6270032AC39 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E8742610B12C0032AC39 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		74D3E86A2610A6400032AC39 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E849261087630032AC39 /* Main.storyboard */,
+				74D3E84E261087650032AC39 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		74D3E86B2610A6520032AC39 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E843261087630032AC39 /* AppDelegate.swift */,
+				74D3E845261087630032AC39 /* SceneDelegate.swift */,
+				74D3E851261087650032AC39 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		74D3E86C2610A6740032AC39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				74D3E84C261087650032AC39 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +206,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D3E860261088C30032AC39 /* AppTableViewController.swift in Sources */,
+				74D3E8722610A7A90032AC39 /* AppModel.swift in Sources */,
+				74D3E86E2610A7390032AC39 /* AppTableViewCell.swift in Sources */,
+				74D3E8752610B12C0032AC39 /* NetworkManager.swift in Sources */,
 				74D3E844261087630032AC39 /* AppDelegate.swift in Sources */,
 				74D3E846261087630032AC39 /* SceneDelegate.swift in Sources */,
 				74D3E863261089060032AC39 /* AppDetailViewController.swift in Sources */,
@@ -292,7 +360,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FX9R88448;
-				INFOPLIST_FILE = "AppsRating(GIT, MVC, MVVM)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AppsRating(GIT, MVC, MVVM)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -312,7 +380,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FX9R88448;
-				INFOPLIST_FILE = "AppsRating(GIT, MVC, MVVM)/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/AppsRating(GIT, MVC, MVVM)/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

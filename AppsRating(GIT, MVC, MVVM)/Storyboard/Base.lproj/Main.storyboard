@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Apps Raiting-->
+        <!--Free Apps Raiting-->
         <scene sceneID="uNM-Jo-1Sy">
             <objects>
                 <tableViewController id="LoH-k7-suM" customClass="AppTableViewController" customModule="AppsRating_GIT__MVC__MVVM_" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellApp" id="4vc-6o-0vT">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellApp" id="4vc-6o-0vT" customClass="AppTableViewCell" customModule="AppsRating_GIT__MVC__MVVM_" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4vc-6o-0vT" id="BeG-MT-Ukl">
@@ -35,11 +35,11 @@
                             <outlet property="delegate" destination="LoH-k7-suM" id="BS5-J3-ld1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Apps Raiting" id="Ayh-xb-OYh"/>
+                    <navigationItem key="navigationItem" title="Free Apps Raiting" id="Ayh-xb-OYh"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLD-lv-oFV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="335" y="182"/>
+            <point key="canvasLocation" x="334.78260869565219" y="181.47321428571428"/>
         </scene>
         <!--App Detail View Controller-->
         <scene sceneID="PK1-hk-m3K">
@@ -121,6 +121,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ehj-W7-FhT"/>
+                    <connections>
+                        <outlet property="developerNameLabel" destination="uP0-Io-Lle" id="BTQ-XF-jEy"/>
+                        <outlet property="imageAppView" destination="YVw-Lm-UiJ" id="DQP-AD-g9J"/>
+                        <outlet property="nameAppLabel" destination="ryF-j4-15M" id="8yl-ng-opM"/>
+                        <outlet property="releaseDataLabel" destination="yPf-6Q-m6P" id="Rer-sI-glH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uSl-EI-4C3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
