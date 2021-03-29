@@ -9,8 +9,9 @@ import Foundation
 
 class NetworkManager {
     
-    let appURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/all/25/explicit.json"
+    let appFreeURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/all/25/explicit.json"
     
+    let appPaidURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-paid/all/25/explicit.json"
     
     func request(stringUrl: String, completion: @escaping (Data?, Error?) -> Void) {
         guard let url = URL(string: stringUrl) else { return }
@@ -23,8 +24,8 @@ class NetworkManager {
         task.resume()
     }
     
-    func dataFetcher(completion: @escaping (_ apps: [FeedResultsApp])->()) {
-        request(stringUrl: appURL) { (data, error) in
+    func dataFetcherFree(completion: @escaping (_ apps: [FeedResultsApp])->()) {
+        request(stringUrl: appFreeURL) { (data, error) in
             let decoder = JSONDecoder()
             do {
             guard let data = data else { return }
@@ -35,4 +36,18 @@ class NetworkManager {
             }
     }
 }
+    
+    func dataFetcherPaid(completion: @escaping (_ apps: [FeedResultsApp])->()) {
+        request(stringUrl: appPaidURL) { (data, error) in
+            let decoder = JSONDecoder()
+            do {
+            guard let data = data else { return }
+            let response = try decoder.decode(App.self, from: data)
+            completion(response.feed.results)
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+    }
+}
+    
 }

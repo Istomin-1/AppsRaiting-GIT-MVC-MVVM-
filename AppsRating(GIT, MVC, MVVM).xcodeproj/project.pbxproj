@@ -17,6 +17,7 @@
 		74D3E86E2610A7390032AC39 /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E86D2610A7390032AC39 /* AppTableViewCell.swift */; };
 		74D3E8722610A7A90032AC39 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E8712610A7A90032AC39 /* AppModel.swift */; };
 		74D3E8752610B12C0032AC39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E8742610B12C0032AC39 /* NetworkManager.swift */; };
+		74D3E8872611AE6F0032AC39 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D3E8862611AE6F0032AC39 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		74D3E86D2610A7390032AC39 /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		74D3E8712610A7A90032AC39 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		74D3E8742610B12C0032AC39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		74D3E8862611AE6F0032AC39 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				74D3E8742610B12C0032AC39 /* NetworkManager.swift */,
+				74D3E8862611AE6F0032AC39 /* DataManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				74D3E860261088C30032AC39 /* AppTableViewController.swift in Sources */,
+				74D3E8872611AE6F0032AC39 /* DataManager.swift in Sources */,
 				74D3E8722610A7A90032AC39 /* AppModel.swift in Sources */,
 				74D3E86E2610A7390032AC39 /* AppTableViewCell.swift in Sources */,
 				74D3E8752610B12C0032AC39 /* NetworkManager.swift in Sources */,

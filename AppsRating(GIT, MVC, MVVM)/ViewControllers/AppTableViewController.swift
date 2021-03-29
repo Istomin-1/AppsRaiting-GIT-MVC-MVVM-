@@ -12,6 +12,8 @@ class AppTableViewController: UITableViewController {
     private var apps: [FeedResultsApp] = []
     var networkManager = NetworkManager()
     
+    @IBOutlet var raitingAppsSegmentedControl: UISegmentedControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         getApps()
@@ -55,11 +57,22 @@ class AppTableViewController: UITableViewController {
     }
     
     private func getApps() {
-        networkManager.dataFetcher { apps in
-        self.apps = apps
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
+        switch raitingAppsSegmentedControl.selectedSegmentIndex {
+        case 0:
+            networkManager.dataFetcherFree { apps in
+            self.apps = apps
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
             }
+        case 1:
+            networkManager.dataFetcherPaid { apps in
+                self.apps = apps
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                }
+        default: break
         }
     }
     
@@ -68,6 +81,9 @@ class AppTableViewController: UITableViewController {
         let app = apps[indexPath.row]
         let detailVC = segue.destination as! AppDetailViewController
         detailVC.app = app
+    }
+    @IBAction func changeSegment() {
+        getApps()
     }
     
 }
