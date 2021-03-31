@@ -70,7 +70,6 @@
 				74D3E8672610A5F20032AC39 /* Models */,
 				74D3E8682610A6090032AC39 /* Views */,
 				74D3E8692610A6270032AC39 /* Services */,
-				74D3E86A2610A6400032AC39 /* Storyboard */,
 				74D3E86B2610A6520032AC39 /* Supporting Files */,
 				74D3E86C2610A6740032AC39 /* Resources */,
 			);
@@ -98,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				74D3E86D2610A7390032AC39 /* AppTableViewCell.swift */,
+				74D3E849261087630032AC39 /* Main.storyboard */,
+				74D3E84E261087650032AC39 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,15 +110,6 @@
 				74D3E8862611AE6F0032AC39 /* DataManager.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		74D3E86A2610A6400032AC39 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				74D3E849261087630032AC39 /* Main.storyboard */,
-				74D3E84E261087650032AC39 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		74D3E86B2610A6520032AC39 /* Supporting Files */ = {

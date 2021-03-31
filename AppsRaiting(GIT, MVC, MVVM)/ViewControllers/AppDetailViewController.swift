@@ -9,15 +9,19 @@ import UIKit
 
 class AppDetailViewController: UIViewController {
     
+    // MARK: - Properties
+    var app: FeedResultsApp!
+    
+    private var isFavourite = false
+    
     @IBOutlet private var nameAppLabel: UILabel!
     @IBOutlet private var imageAppView: UIImageView!
     @IBOutlet private var developerNameLabel: UILabel!
     @IBOutlet private var releaseDataLabel: UILabel!
     @IBOutlet private var favouriteButton: UIButton!
     
-    var app: FeedResultsApp!
-    private var isFavourite = false
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFavoyriteStatus()
@@ -25,7 +29,6 @@ class AppDetailViewController: UIViewController {
     }
     
     // MARK: - Update interface
-    
     private func setupUI() {
         nameAppLabel.text = app.name
         developerNameLabel.text = app.artistName
@@ -40,7 +43,6 @@ class AppDetailViewController: UIViewController {
     }
     
     // MARK: - Work with DataManager
-    
     @IBAction private func toggleFavorite(_ sender: UIButton) {
         isFavourite.toggle()
         let image = setImageForFavoriteButton()

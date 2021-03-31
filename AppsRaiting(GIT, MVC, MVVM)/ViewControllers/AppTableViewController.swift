@@ -9,14 +9,16 @@ import UIKit
 
 class AppTableViewController: UITableViewController {
     
-    @IBOutlet private var raitingAppsSegmentedControl: UISegmentedControl!
+    // MARK: - Properties
+    let appFreeURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/all/10/explicit.json"
+    let appPaidURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-paid/all/10/explicit.json"
     
     private var apps: [FeedResultsApp] = []
     var networkManager = NetworkManager()
     
-    let appFreeURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/all/10/explicit.json"
-    let appPaidURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-paid/all/10/explicit.json"
+    @IBOutlet private var raitingAppsSegmentedControl: UISegmentedControl!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -25,7 +27,6 @@ class AppTableViewController: UITableViewController {
     
     
     // MARK: - Table view data source
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return apps.count
@@ -40,7 +41,6 @@ class AppTableViewController: UITableViewController {
     }
     
     // MARK: - Table view delegate
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
@@ -50,7 +50,6 @@ class AppTableViewController: UITableViewController {
     }
     
     //MARK: - Update interface
-    
     private func getApps() {
         switch raitingAppsSegmentedControl.selectedSegmentIndex {
         case 0:
@@ -88,7 +87,6 @@ class AppTableViewController: UITableViewController {
     }
     
     // MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let app = apps[indexPath.row]
