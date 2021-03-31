@@ -15,24 +15,22 @@ class AppDetailViewController: UIViewController {
     @IBOutlet private var releaseDataLabel: UILabel!
     @IBOutlet private var favouriteButton: UIButton!
     
-    var app: FeedResultsApp!
-    private var isFavourite = false
+     var viewModel: AppDetailViewModelProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadFavoyriteStatus()
+        
         setupUI()
     }
     
     // MARK: - Update interface
     
     private func setupUI() {
-        nameAppLabel.text = app.name
-        developerNameLabel.text = app.artistName
-        releaseDataLabel.text = app.releaseDate
-        
-        guard let imageURL = URL(string: app.imageUrl) else { return }
-        guard let imageData = try? Data(contentsOf: imageURL) else { return }
+
+        nameAppLabel.text = viewModel.appName
+        developerNameLabel.text = viewModel.artistName
+        releaseDataLabel.text = viewModel.releaseDate
+        guard let imageData = viewModel.imageUrl else { return }
         imageAppView.image = UIImage(data: imageData)
         
         let imageFavourite = setImageForFavoriteButton()
@@ -42,17 +40,12 @@ class AppDetailViewController: UIViewController {
     // MARK: - Work with DataManager
     
     @IBAction private func toggleFavorite(_ sender: UIButton) {
-        isFavourite.toggle()
+        viewModel.isFavorite.toggle()
         let image = setImageForFavoriteButton()
         sender.setImage(image, for: .normal)
-        DataManager.shared.saveFavouriteStatus(for: app.name, with: isFavourite)
     }
     
     private func setImageForFavoriteButton() -> UIImage {
-        return isFavourite ? #imageLiteral(resourceName: "heartIcon") : #imageLiteral(resourceName: "unselectedHeart")
-    }
-    
-    private func loadFavoyriteStatus() {
-        isFavourite = DataManager.shared.loadFavouriteStatus(for: app.name)
+        return viewModel.isFavorite ? #imageLiteral(resourceName: "heartIcon") : #imageLiteral(resourceName: "unselectedHeart")
     }
 }

@@ -11,16 +11,18 @@ class AppTableViewController: UITableViewController {
     
     @IBOutlet private var raitingAppsSegmentedControl: UISegmentedControl!
     
-    private var apps: [FeedResultsApp] = []
-    var networkManager = NetworkManager()
-    
-    let appFreeURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-free/all/10/explicit.json"
-    let appPaidURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-paid/all/10/explicit.json"
+    private var viewModel: AppViewModelProtocol! {
+        didSet {
+                viewModel.fetchAppsFree {
+                    self.tableView.reloadData()
+                }
+            }
+        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
-        getApps()
+        viewModel = AppViewModel()
     }
     
     
@@ -28,13 +30,13 @@ class AppTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return apps.count
+        return viewModel.numberOfRows() ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellApp", for: indexPath) as! AppTableViewCell
-        let app = apps[indexPath.row]
-        cell.configure(wit: app)
+        let cellViewModel = viewModel.cellViewModel(for: indexPath)
+        cell.viewModel = cellViewModel
         
         return cell
     }
@@ -54,18 +56,12 @@ class AppTableViewController: UITableViewController {
     private func getApps() {
         switch raitingAppsSegmentedControl.selectedSegmentIndex {
         case 0:
-            networkManager.dataFetcher(stringUrl: appFreeURL) { apps in
-                self.apps = apps
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+            viewModel.fetchAppsFree {
+                self.tableView.reloadData()
             }
         case 1:
-            networkManager.dataFetcher(stringUrl: appPaidURL) { apps in
-                self.apps = apps
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+            viewModel.fetchAppsPaid {
+                self.tableView.reloadData()
             }
         default: break
         }
@@ -91,9 +87,9 @@ class AppTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let app = apps[indexPath.row]
         let detailVC = segue.destination as! AppDetailViewController
-        detailVC.app = app
+        viewModel.selectedRow(for: indexPath)
+        detailVC.viewModel = viewModel.viewModelForSelectedRow()
     }
 }
 
