@@ -13,9 +13,7 @@ class AppViewModel: AppViewModelProtocol {
     let appPaidURL = "https://rss.itunes.apple.com/api/v1/ru/ios-apps/top-paid/all/10/explicit.json"
     
     var networkManager = NetworkManager()
-    
     var apps: [FeedResultsApp] = []
-    
     private var indexPath: IndexPath?
     
     func fetchAppsFree(completion: @escaping () -> Void) {

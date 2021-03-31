@@ -9,15 +9,15 @@ import Foundation
 
 class AppTableViewCellViewModel: AppTableViewCellViewModelProtocol {
     
+    private var app: FeedResultsApp
+    
     var appName: String {
         return app.name
     }
     
     var imageData: Data? {
-        return ImageMeneger.shared.getImageData(from: app.imageUrl)
+        return ImageManeger.shared.getImageData(from: app.imageUrl)
     }
-    
-    private var app: FeedResultsApp
     
     required init(app: FeedResultsApp) {
         self.app = app

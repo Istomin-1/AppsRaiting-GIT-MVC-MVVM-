@@ -9,24 +9,24 @@ import UIKit
 
 class AppDetailViewController: UIViewController {
     
+    // MARK: - Properties
+    var viewModel: AppDetailViewModelProtocol!
+    
     @IBOutlet private var nameAppLabel: UILabel!
     @IBOutlet private var imageAppView: UIImageView!
     @IBOutlet private var developerNameLabel: UILabel!
     @IBOutlet private var releaseDataLabel: UILabel!
     @IBOutlet private var favouriteButton: UIButton!
     
-     var viewModel: AppDetailViewModelProtocol!
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
     }
     
     // MARK: - Update interface
-    
     private func setupUI() {
-
+        
         nameAppLabel.text = viewModel.appName
         developerNameLabel.text = viewModel.artistName
         releaseDataLabel.text = viewModel.releaseDate
@@ -38,7 +38,6 @@ class AppDetailViewController: UIViewController {
     }
     
     // MARK: - Work with DataManager
-    
     @IBAction private func toggleFavorite(_ sender: UIButton) {
         viewModel.isFavorite.toggle()
         let image = setImageForFavoriteButton()

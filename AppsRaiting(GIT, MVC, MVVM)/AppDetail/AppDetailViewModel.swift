@@ -8,7 +8,9 @@
 import Foundation
 
 class AppDetailViewModel: AppDetailViewModelProtocol {
-  
+    
+    private var app: FeedResultsApp!
+    
     var appName: String {
         return app.name
     }
@@ -22,10 +24,8 @@ class AppDetailViewModel: AppDetailViewModelProtocol {
     }
     
     var imageUrl: Data? {
-        return ImageMeneger.shared.getImageData(from: app.imageUrl)
+        return ImageManeger.shared.getImageData(from: app.imageUrl)
     }
-    
-    private var app: FeedResultsApp!
     
     var isFavorite: Bool {
         get {
@@ -39,4 +39,4 @@ class AppDetailViewModel: AppDetailViewModelProtocol {
     required init(app: FeedResultsApp) {
         self.app = app
     }
-    }
+}
